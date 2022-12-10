@@ -10,10 +10,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import seaborn as sns
+#Abrir dataset no kaggle
+import opendatasets as opendatasets
 
 #%% Carregando o Dataset
 #fonte: https://www.kaggle.com/datasets/dhanushnarayananr/credit-card-fraud?resource=download
-df = pd.read_csv("card_transdata.csv")
+
+#Abrir dataset direto do Kaggle
+opendatasets.download("https://www.kaggle.com/dhanushnarayananr/credit-card-fraud")
+df = pd.read_csv("credit-card-fraud/card_transdata.csv")
+
+#Abrir dataset no drive local
+#df = pd.read_csv("card_transdata.csv")
 
 #%% Visualizando o Dataset
 print(df.info())
